@@ -197,8 +197,8 @@
     if (showHUD) {
         [SVProgressHUD show];
     }
-    DBLog(@"上传图片接口 URL-> %@",url);
-    DBLog(@"上传图片的参数-> %@",paramsDict);
+    TLLog(@"上传图片接口 URL-> %@",url);
+    TLLog(@"上传图片的参数-> %@",paramsDict);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     [manager POST:url parameters:paramsDict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
@@ -211,7 +211,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [SVProgressHUD dismiss];
-        DBLog(@"----> %@",responseObject);
+        TLLog(@"----> %@",responseObject);
         if (successBlock) {
             
             successBlock(responseObject);
@@ -220,26 +220,11 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         [SVProgressHUD dismiss];
-        DBLog(@"----> %@",error.domain);
+        TLLog(@"----> %@",error.domain);
         if (error) {
             failureBlock(error);
         }
     }];
-//    [manager POST:url parameters:paramsDict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//        [formData appendPartWithFileData:uploadParam.data name:uploadParam.name fileName:uploadParam.fileName mimeType:uploadParam.mimeType];
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        [SVProgressHUD dismiss];
-//        DBLog(@"----> %@",responseObject);
-//        if (successBlock) {
-//            successBlock(responseObject);
-//        }
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        [SVProgressHUD dismiss];
-//        DBLog(@"----> %@",error.domain);
-//        if (error) {
-//            failureBlock(error);
-//        }
-//    }];
 }
 
 @end

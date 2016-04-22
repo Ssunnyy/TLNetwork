@@ -10,8 +10,6 @@
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
 #import "MHAsiNetworkDefine.h"
-#import "NSDictionary+JSONString.h"
-
 
 @interface MHAsiNetworkItem ()
 
@@ -59,8 +57,8 @@
             [SVProgressHUD show];
         }
         __weak typeof(self)weakSelf = self;
-//        DBLog(@"--请求url地址--%@\n",url);
-//        DBLog(@"----请求参数%@\n",params);
+//        TLLog(@"--请求url地址--%@\n",url);
+//        TLLog(@"----请求参数%@\n",params);
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         //        manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObject:@"text/html"];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", nil];
@@ -74,7 +72,6 @@
                 [SVProgressHUD dismiss];
                 
 //                NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:responseObject];
-//                DBLog(@"\n\n----请求的返回结果 %@\n",[dic JSONString]);
                 if ([responseObject[@"state"] boolValue] == NO) {
                     if (failureBlock) {
                         failureBlock(nil);
@@ -96,7 +93,7 @@
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
                 [SVProgressHUD dismiss];
-                DBLog(@"---error==%@\n",error.localizedDescription);
+                TLLog(@"---error==%@\n",error.localizedDescription);
                 if (failureBlock) {
                     failureBlock(error);
                 }
@@ -115,7 +112,7 @@
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 [SVProgressHUD dismiss];
-                DBLog(@"\n\n----请求的返回结果 %@\n",responseObject);
+                TLLog(@"\n\n----请求的返回结果 %@\n",responseObject);
                 if (successBlock) {
                     successBlock(responseObject);
                 }
@@ -128,7 +125,7 @@
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
                 [SVProgressHUD dismiss];
-                DBLog(@"---error==%@\n",error.localizedDescription);
+                TLLog(@"---error==%@\n",error.localizedDescription);
                 if (failureBlock) {
                     failureBlock(error);
                 }
