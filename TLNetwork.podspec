@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/TedLiuHome/TLNetwork.git", :tag => s.version.to_s ,:commit => "961bbf9614c7b3cede6727f6d39c59707c8bbbe8"}
+  s.source       = { :git => "https://github.com/TedLiuHome/TLNetwork.git", :tag => s.version.to_s ,:commit => "a79f1b80b9fad7d80af3b1842fbc0ab6e6cdaaa7"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -88,7 +88,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "NetwrokHandle/","NetwrokHandle/.{h.m}","NetwrokHandle/DSTost.{h.m}"
+  s.source_files  = "NetwrokHandle/*.{h,m}","DSTost/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
