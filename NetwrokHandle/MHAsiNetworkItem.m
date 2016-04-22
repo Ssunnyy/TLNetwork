@@ -57,8 +57,6 @@
             [SVProgressHUD show];
         }
         __weak typeof(self)weakSelf = self;
-//        TLLog(@"--请求url地址--%@\n",url);
-//        TLLog(@"----请求参数%@\n",params);
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         //        manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObject:@"text/html"];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", nil];
@@ -93,7 +91,7 @@
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
                 [SVProgressHUD dismiss];
-                TLLog(@"---error==%@\n",error.localizedDescription);
+                NSLog(@"---error==%@\n",error.localizedDescription);
                 if (failureBlock) {
                     failureBlock(error);
                 }
@@ -112,7 +110,7 @@
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 [SVProgressHUD dismiss];
-                TLLog(@"\n\n----请求的返回结果 %@\n",responseObject);
+                NSLog(@"\n\n----请求的返回结果 %@\n",responseObject);
                 if (successBlock) {
                     successBlock(responseObject);
                 }
@@ -125,7 +123,7 @@
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
                 [SVProgressHUD dismiss];
-                TLLog(@"---error==%@\n",error.localizedDescription);
+                NSLog(@"---error==%@\n",error.localizedDescription);
                 if (failureBlock) {
                     failureBlock(error);
                 }

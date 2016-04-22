@@ -60,7 +60,7 @@
                failureBlock:(MHAsiFailureBlock)failureBlock
 {
     if (self.networkError == YES) {
-        TLLog(@"网络连接断开,请检查网络!");
+        NSLog(@"网络连接断开,请检查网络!");
         if (failureBlock) {
             failureBlock(nil);
         }
@@ -95,18 +95,18 @@
         switch (status)
         {
             case AFNetworkReachabilityStatusUnknown: // 未知网络
-                TLLog(@"未知网络");
+                NSLog(@"未知网络");
                 [MHAsiNetworkHandler sharedInstance].networkError = NO;
                 break;
             case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
                 [MHAsiNetworkHandler sharedInstance].networkError = YES;
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
-                TLLog(@"手机自带网络");
+                NSLog(@"手机自带网络");
                 [MHAsiNetworkHandler sharedInstance].networkError = NO;
                 break;
             case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
-                TLLog(@"WIFI");
+                NSLog(@"WIFI");
                 [MHAsiNetworkHandler sharedInstance].networkError = NO;
                 break;
         }

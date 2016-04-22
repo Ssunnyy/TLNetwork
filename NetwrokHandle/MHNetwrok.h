@@ -8,12 +8,6 @@
 
 #ifndef MHNetwrok_h
 #define MHNetwrok_h
-//判断是否要Log
-#ifdef DEBUG
-#define TLLog(...) NSLog(__VA_ARGS__)
-#else
-#define TLLog(...)
-#endif
 
 #define SHOW_ALERT(_msg_)  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:_msg_ delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];\
 [alert show];

@@ -197,8 +197,6 @@
     if (showHUD) {
         [SVProgressHUD show];
     }
-    TLLog(@"上传图片接口 URL-> %@",url);
-    TLLog(@"上传图片的参数-> %@",paramsDict);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     [manager POST:url parameters:paramsDict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
@@ -211,7 +209,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [SVProgressHUD dismiss];
-        TLLog(@"----> %@",responseObject);
+        NSLog(@"----> %@",responseObject);
         if (successBlock) {
             
             successBlock(responseObject);
@@ -220,7 +218,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         [SVProgressHUD dismiss];
-        TLLog(@"----> %@",error.domain);
+        NSLog(@"----> %@",error.domain);
         if (error) {
             failureBlock(error);
         }
