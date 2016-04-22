@@ -75,7 +75,9 @@
                         failureBlock(nil);
                     }
                     [weakSelf removewItem];
+                    
                     [[DSToast toastWithText:responseObject[@"message"]] show];
+                    
                     return;
                 }
                 
