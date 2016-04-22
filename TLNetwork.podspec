@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Ted.Liu" => "ihomelp07@gmail.com" }
+  s.author             = { "ihomelp07" => "ihomelp07@gmail.com" }
   # Or just: s.author    = "Ted.Liu"
   # s.authors            = { "Ted.Liu" => "" }
   # s.social_media_url   = "http://twitter.com/Ted.Liu"
@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/TedLiuHome/TLNetwork.git", :tag => s.version.to_s ,:commit => "a79f1b80b9fad7d80af3b1842fbc0ab6e6cdaaa7"}
+  s.source       = { :git => "https://github.com/TedLiuHome/TLNetwork.git", :tag => s.version.to_s ,:commit => "5971be27040624ae3ad4caa90297bd0fa7cbe2dd"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
