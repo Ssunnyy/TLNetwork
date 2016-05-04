@@ -56,8 +56,6 @@
               params:(NSMutableDictionary *)params
             delegate:(id)delegate
              showHUD:(BOOL)showHUD
-              target:(id)target
-              action:(SEL)action
         successBlock:(TLAsiSuccessBlock)successBlock
         failureBlock:(TLAsiFailureBlock)failureBlock;
 /**

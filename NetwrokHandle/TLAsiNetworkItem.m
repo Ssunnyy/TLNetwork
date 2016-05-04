@@ -38,8 +38,6 @@
                                url:(NSString *)url
                             params:(NSDictionary *)params
                           delegate:(id)delegate
-                            target:(id)target
-                            action:(SEL)action
                          hashValue:(NSUInteger)hashValue
                            showHUD:(BOOL)showHUD
                       successBlock:(TLAsiSuccessBlock)successBlock
@@ -52,8 +50,6 @@
         self.params         = params;
         self.delegate       = delegate;
         self.showHUD        = showHUD;
-        self.tagrget        = target;
-        self.select         = action;
         if (showHUD==YES) {
             [SVProgressHUD show];
         }
@@ -88,7 +84,6 @@
                 if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
                     [weakSelf.delegate requestDidFinishLoading:responseObject];
                 }
-                [weakSelf performSelector:@selector(finishedRequest: didFaild:) withObject:responseObject withObject:nil];
                 [weakSelf removewItem];
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -101,7 +96,6 @@
                 if ([weakSelf.delegate respondsToSelector:@selector(requestdidFailWithError:)]) {
                     [weakSelf.delegate requestdidFailWithError:error];
                 }
-                [weakSelf performSelector:@selector(finishedRequest: didFaild:) withObject:nil withObject:error];
                 [weakSelf removewItem];
                 
             }];
@@ -120,7 +114,6 @@
                 if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
                     [weakSelf.delegate requestDidFinishLoading:responseObject];
                 }
-                [weakSelf performSelector:@selector(finishedRequest: didFaild:) withObject:responseObject withObject:nil];
                 [weakSelf removewItem];
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -133,7 +126,6 @@
                 if ([weakSelf.delegate respondsToSelector:@selector(requestdidFailWithError:)]) {
                     [weakSelf.delegate requestdidFailWithError:error];
                 }
-                [weakSelf performSelector:@selector(finishedRequest: didFaild:) withObject:nil withObject:error];
                 [weakSelf removewItem];
             }];
         }
@@ -152,14 +144,6 @@
         }
     });
 }
-
-- (void)finishedRequest:(id)data didFaild:(NSError*)error
-{
-    if ([self.tagrget respondsToSelector:self.select]) {
-        [self.tagrget performSelector:@selector(finishedRequest:didFaild:) withObject:data withObject:error];
-    }
-}
-
 - (void)dealloc
 {
     

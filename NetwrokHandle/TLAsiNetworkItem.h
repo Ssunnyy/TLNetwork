@@ -35,15 +35,6 @@
  */
 @property (nonatomic, assign) id<TLAsiNetworkDelegate>delegate;
 /**
- *   target
- */
-@property (nonatomic,assign) id tagrget;
-/**
- *   action
- */
-@property (nonatomic,assign) SEL select;
-
-/**
  *  是否显示HUD
  */
 @property (nonatomic, assign) BOOL showHUD;
@@ -67,8 +58,6 @@
                                url:(NSString *)url
                             params:(NSDictionary *)params
                           delegate:(id)delegate
-                            target:(id)target
-                            action:(SEL)action
                          hashValue:(NSUInteger)hashValue
                            showHUD:(BOOL)showHUD
                       successBlock:(TLAsiSuccessBlock)successBlock

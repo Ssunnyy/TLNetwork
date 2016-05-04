@@ -54,8 +54,6 @@
                      params:(NSMutableDictionary *)params
                    delegate:(id)delegate
                     showHUD:(BOOL)showHUD
-                     target:(id)target
-                     action:(SEL)action
                successBlock:(TLAsiSuccessBlock)successBlock
                failureBlock:(TLAsiFailureBlock)failureBlock
 {
@@ -72,8 +70,6 @@
                                                          url:url
                                                       params:params
                                                     delegate:delegate
-                                                      target:target
-                                                      action:action
                                                    hashValue:hashValue
                                                      showHUD:showHUD
                                                 successBlock:successBlock
@@ -138,6 +134,7 @@
 - (void)netWorkWillDealloc:(TLAsiNetworkItem *)itme
 {
     [self.items removeObject:itme];
+    
     self.netWorkItem = nil;
 }
 @end

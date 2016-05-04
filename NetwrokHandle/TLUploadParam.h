@@ -22,7 +22,6 @@
  *  上传到服务器的文件名称
  */
 @property (nonatomic, copy) NSString *fileName;
-
 /**
  *  上传文件的类型
  */
