@@ -1,22 +1,22 @@
 //
-//  MHAsiNetworkItem.m
-//  MHProject
+//  TLAsiNetworkItem.m
+//  NetwrokDemo
 //
-//  Created by MengHuan on 15/4/23.
-//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
-#import "MHAsiNetworkItem.h"
+#import "TLAsiNetworkItem.h"
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
-#import "MHAsiNetworkDefine.h"
+#import "TLAsiNetworkDefine.h"
 #import "DSToast.h"
 
-@interface MHAsiNetworkItem ()
+@interface TLAsiNetworkItem ()
 
 @end
 
-@implementation MHAsiNetworkItem
+@implementation TLAsiNetworkItem
 
 
 #pragma mark - 创建一个网络请求项，开始请求网络
@@ -32,9 +32,9 @@
  *  @param successBlock 请求成功后的block
  *  @param failureBlock 请求失败后的block
  *
- *  @return MHAsiNetworkItem对象
+ *  @return TLAsiNetworkItem对象
  */
-- (MHAsiNetworkItem *)initWithtype:(MHAsiNetWorkType)networkType
+- (TLAsiNetworkItem *)initWithtype:(TLAsiNetWorkType)networkType
                                url:(NSString *)url
                             params:(NSDictionary *)params
                           delegate:(id)delegate
@@ -42,8 +42,8 @@
                             action:(SEL)action
                          hashValue:(NSUInteger)hashValue
                            showHUD:(BOOL)showHUD
-                      successBlock:(MHAsiSuccessBlock)successBlock
-                      failureBlock:(MHAsiFailureBlock)failureBlock
+                      successBlock:(TLAsiSuccessBlock)successBlock
+                      failureBlock:(TLAsiFailureBlock)failureBlock
 {
     if (self = [super init])
     {
@@ -62,7 +62,7 @@
         //        manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObject:@"text/html"];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", nil];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
-        if (networkType==MHAsiNetWorkGET)
+        if (networkType==TLAsiNetWorkGET)
         {
             [manager GET:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
                 

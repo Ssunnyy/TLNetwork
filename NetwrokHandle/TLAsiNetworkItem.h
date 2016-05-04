@@ -1,24 +1,24 @@
 //
-//  MHAsiNetworkItem.h
-//  MHProject
+//  TLAsiNetworkItem.h
+//  NetwrokDemo
 //
-//  Created by MengHuan on 15/4/23.
-//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "MHAsiNetworkDefine.h"
-#import "MHAsiNetworkDelegate.h"
+#import "TLAsiNetworkDefine.h"
+#import "TLAsiNetworkDelegate.h"
 
 /**
  *  网络请求子项
  */
-@interface MHAsiNetworkItem : NSObject
+@interface TLAsiNetworkItem : NSObject
 
 /**
  *  网络请求方式
  */
-@property (nonatomic, assign) MHAsiNetWorkType networkType;
+@property (nonatomic, assign) TLAsiNetWorkType networkType;
 
 /**
  *  网络请求URL
@@ -33,7 +33,7 @@
 /**
  *  网络请求的委托
  */
-@property (nonatomic, assign) id<MHAsiNetworkDelegate>delegate;
+@property (nonatomic, assign) id<TLAsiNetworkDelegate>delegate;
 /**
  *   target
  */
@@ -61,9 +61,9 @@
  *  @param successBlock 请求成功后的block
  *  @param failureBlock 请求失败后的block
  *
- *  @return MHAsiNetworkItem对象
+ *  @return TLAsiNetworkItem对象
  */
-- (MHAsiNetworkItem *)initWithtype:(MHAsiNetWorkType)networkType
+- (TLAsiNetworkItem *)initWithtype:(TLAsiNetWorkType)networkType
                                url:(NSString *)url
                             params:(NSDictionary *)params
                           delegate:(id)delegate
@@ -71,7 +71,7 @@
                             action:(SEL)action
                          hashValue:(NSUInteger)hashValue
                            showHUD:(BOOL)showHUD
-                      successBlock:(MHAsiSuccessBlock)successBlock
-                      failureBlock:(MHAsiFailureBlock)failureBlock;
+                      successBlock:(TLAsiSuccessBlock)successBlock
+                      failureBlock:(TLAsiFailureBlock)failureBlock;
 
 @end

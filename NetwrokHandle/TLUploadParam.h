@@ -1,14 +1,14 @@
 //
-//  CZUploadParam.h
-//  传智微博
+//  TLUploadParam.h
+//  NetwrokDemo
 //
-//  Created by apple on 15-3-13.
-//  Copyright (c) 2015年 apple. All rights reserved.
-//  图片上传的参数模型
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 
-@interface MHUploadParam : NSObject
+@interface TLUploadParam : NSObject
 
 /**
  *  上传文件的二进制数据

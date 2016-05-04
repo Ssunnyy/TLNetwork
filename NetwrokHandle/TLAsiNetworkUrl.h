@@ -1,22 +1,22 @@
 //
-//  MHAsiNetworkUrl.h
-//  MHProject
+//  TLAsiNetworkDefine.h
+//  NetwrokDemo
 //
-//  Created by MengHuan on 15/4/23.
-//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
-#ifndef MHProject_MHAsiNetworkUrl_h
-#define MHProject_MHAsiNetworkUrl_h
+#ifndef NetwrokDemo_TLAsiNetworkDefine_h
+#define NetwrokDemo_TLAsiNetworkDefine_h
 ///**
 // *  正式环境
 // */
-//#define API_HOST @"http://123.59.61.167/api/JNWTV"
+//#define API_HOST @""
 
 ///**
 // *   测试环境
 // */
-#define API_HOST @"http://120.132.61.55/api/JNWTV"
+#define API_HOST @""
 
 //      接口路径全拼
 #define PATH(_path)             [NSString stringWithFormat:_path, API_HOST]

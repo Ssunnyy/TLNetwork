@@ -1,20 +1,20 @@
 //
-//  MHNetworkManager.m
-//  MHProject
+//  TLNetworkManager.m
+//  NetwrokDemo
 //
-//  Created by yons on 15/9/22.
-//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
-#import "MHNetworkManager.h"
-#import "MHAsiNetworkHandler.h"
-#import "MHUploadParam.h"
+#import "TLNetworkManager.h"
+#import "TLAsiNetworkHandler.h"
+#import "TLUploadParam.h"
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
-@implementation MHNetworkManager
+@implementation TLNetworkManager
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
-    static MHNetworkManager *_manager;
+    static TLNetworkManager *_manager;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -46,12 +46,12 @@
                   target:(id)target
                   action:(SEL)action
                 delegate:(id)delegate
-            successBlock:(MHAsiSuccessBlock)successBlock
-            failureBlock:(MHAsiFailureBlock)failureBlock
+            successBlock:(TLAsiSuccessBlock)successBlock
+            failureBlock:(TLAsiFailureBlock)failureBlock
                  showHUD:(BOOL)showHUD
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithDictionary:params];
-    [[MHAsiNetworkHandler sharedInstance] conURL:url networkType:MHAsiNetWorkGET params:mutableDict delegate:delegate showHUD:showHUD target:target action:action successBlock:successBlock failureBlock:failureBlock];
+    [[TLAsiNetworkHandler sharedInstance] conURL:url networkType:TLAsiNetWorkGET params:mutableDict delegate:delegate showHUD:showHUD target:target action:action successBlock:successBlock failureBlock:failureBlock];
 }
 /**
  *   GET请求通过Block 回调结果
@@ -64,8 +64,8 @@
  */
 + (void)getRequstWithURL:(NSString*)url
                   params:(NSDictionary*)params
-            successBlock:(MHAsiSuccessBlock)successBlock
-            failureBlock:(MHAsiFailureBlock)failureBlock
+            successBlock:(TLAsiSuccessBlock)successBlock
+            failureBlock:(TLAsiFailureBlock)failureBlock
                  showHUD:(BOOL)showHUD
 {
     [self getRequstWithURL:url params:params target:nil action:nil delegate:nil successBlock:successBlock failureBlock:failureBlock showHUD:showHUD];
@@ -80,7 +80,7 @@
  */
 + (void)getRequstWithURL:(NSString*)url
                   params:(NSDictionary*)params
-                delegate:(id<MHAsiNetworkDelegate>)delegate
+                delegate:(id<TLAsiNetworkDelegate>)delegate
                  showHUD:(BOOL)showHUD
 {
     [self getRequstWithURL:url params:params target:nil action:nil delegate:delegate successBlock:nil failureBlock:nil showHUD:showHUD];
@@ -121,13 +121,13 @@
                     params:(NSDictionary*)params
                     target:(id)target
                     action:(SEL)action
-                  delegate:(id<MHAsiNetworkDelegate>)delegate
-              successBlock:(MHAsiSuccessBlock)successBlock
-              failureBlock:(MHAsiFailureBlock)failureBlock
+                  delegate:(id<TLAsiNetworkDelegate>)delegate
+              successBlock:(TLAsiSuccessBlock)successBlock
+              failureBlock:(TLAsiFailureBlock)failureBlock
                    showHUD:(BOOL)showHUD
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithDictionary:params];
-    [[MHAsiNetworkHandler sharedInstance] conURL:url networkType:MHAsiNetWorkPOST params:mutableDict delegate:delegate showHUD:showHUD target:target action:action successBlock:successBlock failureBlock:failureBlock];
+    [[TLAsiNetworkHandler sharedInstance] conURL:url networkType:TLAsiNetWorkPOST params:mutableDict delegate:delegate showHUD:showHUD target:target action:action successBlock:successBlock failureBlock:failureBlock];
 }
 /**
  *   通过 Block回调结果
@@ -140,8 +140,8 @@
  */
 + (void)postReqeustWithURL:(NSString*)url
                     params:(NSDictionary*)params
-              successBlock:(MHAsiSuccessBlock)successBlock
-              failureBlock:(MHAsiFailureBlock)failureBlock
+              successBlock:(TLAsiSuccessBlock)successBlock
+              failureBlock:(TLAsiFailureBlock)failureBlock
                    showHUD:(BOOL)showHUD
 {
     [self postReqeustWithURL:url params:params target:nil action:nil delegate:nil successBlock:successBlock failureBlock:failureBlock showHUD:showHUD];
@@ -156,7 +156,7 @@
  */
 + (void)postReqeustWithURL:(NSString*)url
                     params:(NSDictionary*)params
-                  delegate:(id<MHAsiNetworkDelegate>)delegate
+                  delegate:(id<TLAsiNetworkDelegate>)delegate
                    showHUD:(BOOL)showHUD;
 {
     [self postReqeustWithURL:url params:params target:nil action:nil delegate:delegate successBlock:nil failureBlock:nil showHUD:showHUD];
@@ -189,9 +189,9 @@
  */
 + (void)uploadFileWithURL:(NSString*)url
                    params:(NSDictionary*)paramsDict
-             successBlock:(MHAsiSuccessBlock)successBlock
-             failureBlock:(MHAsiFailureBlock)failureBlock
-              uploadParam:(MHUploadParam *)uploadParam
+             successBlock:(TLAsiSuccessBlock)successBlock
+             failureBlock:(TLAsiFailureBlock)failureBlock
+              uploadParam:(TLUploadParam *)uploadParam
                   showHUD:(BOOL)showHUD
 {
     if (showHUD) {

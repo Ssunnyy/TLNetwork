@@ -1,17 +1,17 @@
 //
-//  MHNetworkManager.h
-//  MHProject
+//  TLNetworkManager.h
+//  NetwrokDemo
 //
-//  Created by yons on 15/9/22.
-//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "MHAsiNetworkDefine.h"
-#import "MHAsiNetworkDelegate.h"
-@class MHUploadParam;
+#import "TLAsiNetworkDefine.h"
+#import "TLAsiNetworkDelegate.h"
+@class TLUploadParam;
 /// 请求管理着
-@interface MHNetworkManager : NSObject
+@interface TLNetworkManager : NSObject
 
 /// 返回单例
 +(instancetype)sharedInstance;
@@ -29,8 +29,8 @@
  */
 + (void)getRequstWithURL:(NSString*)url
                   params:(NSDictionary*)paramsDict
-            successBlock:(MHAsiSuccessBlock)successBlock
-            failureBlock:(MHAsiFailureBlock)failureBlock
+            successBlock:(TLAsiSuccessBlock)successBlock
+            failureBlock:(TLAsiFailureBlock)failureBlock
                  showHUD:(BOOL)showHUD;
 /**
  *   GET请求通过代理回调
@@ -42,7 +42,7 @@
  */
 + (void)getRequstWithURL:(NSString*)url
                   params:(NSDictionary*)paramsDict
-                delegate:(id<MHAsiNetworkDelegate>)delegate
+                delegate:(id<TLAsiNetworkDelegate>)delegate
                  showHUD:(BOOL)showHUD;
 /**
  *   get 请求通过 taget 回调方法
@@ -71,8 +71,8 @@
  */
 + (void)postReqeustWithURL:(NSString*)url
                     params:(NSDictionary*)paramsDict
-              successBlock:(MHAsiSuccessBlock)successBlock
-              failureBlock:(MHAsiFailureBlock)failureBlock
+              successBlock:(TLAsiSuccessBlock)successBlock
+              failureBlock:(TLAsiFailureBlock)failureBlock
                    showHUD:(BOOL)showHUD;
 /**
  *   post请求通过代理回调
@@ -84,7 +84,7 @@
  */
 + (void)postReqeustWithURL:(NSString*)url
                     params:(NSDictionary*)paramsDict
-                  delegate:(id<MHAsiNetworkDelegate>)delegate
+                  delegate:(id<TLAsiNetworkDelegate>)delegate
                    showHUD:(BOOL)showHUD;
 /**
  *   post 请求通过 target 回调结果
@@ -110,9 +110,9 @@
  */
 + (void)uploadFileWithURL:(NSString*)url
                    params:(NSDictionary*)paramsDict
-             successBlock:(MHAsiSuccessBlock)successBlock
-             failureBlock:(MHAsiFailureBlock)failureBlock
-              uploadParam:(MHUploadParam *)uploadParam
+             successBlock:(TLAsiSuccessBlock)successBlock
+             failureBlock:(TLAsiFailureBlock)failureBlock
+              uploadParam:(TLUploadParam *)uploadParam
                   showHUD:(BOOL)showHUD;
 
 @end

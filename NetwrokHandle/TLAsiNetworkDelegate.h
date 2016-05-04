@@ -1,17 +1,19 @@
 //
-//  MHAsiNetworkItemDelegate.h
-//  PersonalAssistant
+//  TLAsiNetworkDelegate.h
+//  NetwrokDemo
 //
-//  Created by dabing on 15/10/23.
-//  Copyright © 2015年 Mark. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
-@class MHAsiNetworkItem;
+
+@class TLAsiNetworkItem;
 /**
  *   AFN 请求封装的代理协议
  */
-@protocol MHAsiNetworkDelegate <NSObject>
+@protocol TLAsiNetworkDelegate <NSObject>
 
 @optional
 /**
@@ -32,6 +34,6 @@
  *
  *   @param itme 网络请求项
  */
-- (void)netWorkWillDealloc:(MHAsiNetworkItem*)itme;
+- (void)netWorkWillDealloc:(TLAsiNetworkItem*)itme;
 
 @end

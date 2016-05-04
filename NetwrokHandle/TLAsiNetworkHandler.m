@@ -1,27 +1,27 @@
 //
-//  MHAsiNetworkHandler.m
-//  MHProject
+//  TLAsiNetworkHandler.m
+//  NetwrokDemo
 //
-//  Created by MengHuan on 15/4/23.
-//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
-#import "MHAsiNetworkHandler.h"
-#import "MHAsiNetworkItem.h"
+#import "TLAsiNetworkHandler.h"
+#import "TLAsiNetworkItem.h"
 #import "AFNetworking.h"
-#import "InterfaceMacros.h"
 
-@interface MHAsiNetworkHandler ()
-<MHAsiNetworkDelegate>
+@interface TLAsiNetworkHandler ()<TLAsiNetworkDelegate>
+
 @end;
-@implementation MHAsiNetworkHandler
 
-+ (MHAsiNetworkHandler *)sharedInstance
+@implementation TLAsiNetworkHandler
+
++ (TLAsiNetworkHandler *)sharedInstance
 {
-    static MHAsiNetworkHandler *handler = nil;
+    static TLAsiNetworkHandler *handler = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        handler = [[MHAsiNetworkHandler alloc] init];
+        handler = [[TLAsiNetworkHandler alloc] init];
     });
     return handler;
 }
@@ -49,15 +49,15 @@
  *
  *  @return 根据网络请求的委托delegate而生成的唯一标示
  */
-- (MHAsiNetworkItem*)conURL:(NSString *)url
-                networkType:(MHAsiNetWorkType)networkType
+- (TLAsiNetworkItem*)conURL:(NSString *)url
+                networkType:(TLAsiNetWorkType)networkType
                      params:(NSMutableDictionary *)params
                    delegate:(id)delegate
                     showHUD:(BOOL)showHUD
                      target:(id)target
                      action:(SEL)action
-               successBlock:(MHAsiSuccessBlock)successBlock
-               failureBlock:(MHAsiFailureBlock)failureBlock
+               successBlock:(TLAsiSuccessBlock)successBlock
+               failureBlock:(TLAsiFailureBlock)failureBlock
 {
     if (self.networkError == YES) {
         NSLog(@"网络连接断开,请检查网络!");
@@ -68,8 +68,8 @@
     }
     /// 如果有一些公共处理，可以写在这里
     NSUInteger hashValue = [delegate hash];
-    self.netWorkItem = [[MHAsiNetworkItem alloc]initWithtype:networkType
-                                                         url:[NSString stringWithFormat:@"%@%@",BASE_URL,url]
+    self.netWorkItem = [[TLAsiNetworkItem alloc]initWithtype:networkType
+                                                         url:url
                                                       params:params
                                                     delegate:delegate
                                                       target:target
@@ -96,18 +96,18 @@
         {
             case AFNetworkReachabilityStatusUnknown: // 未知网络
                 NSLog(@"未知网络");
-                [MHAsiNetworkHandler sharedInstance].networkError = NO;
+                [TLAsiNetworkHandler sharedInstance].networkError = NO;
                 break;
             case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
-                [MHAsiNetworkHandler sharedInstance].networkError = YES;
+                [TLAsiNetworkHandler sharedInstance].networkError = YES;
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
                 NSLog(@"手机自带网络");
-                [MHAsiNetworkHandler sharedInstance].networkError = NO;
+                [TLAsiNetworkHandler sharedInstance].networkError = NO;
                 break;
             case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
                 NSLog(@"WIFI");
-                [MHAsiNetworkHandler sharedInstance].networkError = NO;
+                [TLAsiNetworkHandler sharedInstance].networkError = NO;
                 break;
         }
     }];
@@ -130,12 +130,12 @@
  */
 + (void)cancelAllNetItems
 {
-    MHAsiNetworkHandler *handler = [MHAsiNetworkHandler sharedInstance];
+    TLAsiNetworkHandler *handler = [TLAsiNetworkHandler sharedInstance];
     [handler.items removeAllObjects];
     handler.netWorkItem = nil;
 }
 
-- (void)netWorkWillDealloc:(MHAsiNetworkItem *)itme
+- (void)netWorkWillDealloc:(TLAsiNetworkItem *)itme
 {
     [self.items removeObject:itme];
     self.netWorkItem = nil;

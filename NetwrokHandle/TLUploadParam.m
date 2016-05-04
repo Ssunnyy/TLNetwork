@@ -1,16 +1,16 @@
 //
-//  CZUploadParam.m
-//  传智微博
+//  TLUploadParam.m
+//  NetwrokDemo
 //
-//  Created by apple on 15-3-13.
-//  Copyright (c) 2015年 apple. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
-#import "MHUploadParam.h"
+#import "TLUploadParam.h"
 // MD5加密
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation MHUploadParam
+@implementation TLUploadParam
 
 - (NSString*)md5String:(NSString*)str
 {

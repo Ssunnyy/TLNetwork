@@ -1,26 +1,26 @@
 //
-//  MHAsiNetworkHandler.h
-//  MHProject
+//  TLAsiNetworkHandler.h
+//  NetwrokDemo
 //
-//  Created by MengHuan on 15/4/23.
-//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//  Created by Ted Liu on 16/5/4.
+//  Copyright © 2016年 Ted Liu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "MHAsiNetworkDefine.h"
-@class MHAsiNetworkItem;
+#import "TLAsiNetworkDefine.h"
+@class TLAsiNetworkItem;
 
 /**
  *  网络请求Handler类
  */
-@interface MHAsiNetworkHandler : NSObject
+@interface TLAsiNetworkHandler : NSObject
 
 /**
  *  单例
  *
  *  @return BMNetworkHandler的单例对象
  */
-+ (MHAsiNetworkHandler *)sharedInstance;
++ (TLAsiNetworkHandler *)sharedInstance;
 
 /**
  *  items
@@ -30,7 +30,7 @@
 /**
  *   单个网络请求项
  */
-@property(nonatomic,strong)MHAsiNetworkItem *netWorkItem;
+@property(nonatomic,strong)TLAsiNetworkItem *netWorkItem;
 
 /**
  *  networkError
@@ -51,15 +51,15 @@
  *
  *  @return 根据网络请求的委托delegate而生成的唯一标示
  */
-- (MHAsiNetworkItem*)conURL:(NSString *)url
-         networkType:(MHAsiNetWorkType)networkType
+- (TLAsiNetworkItem*)conURL:(NSString *)url
+         networkType:(TLAsiNetWorkType)networkType
               params:(NSMutableDictionary *)params
             delegate:(id)delegate
              showHUD:(BOOL)showHUD
               target:(id)target
               action:(SEL)action
-        successBlock:(MHAsiSuccessBlock)successBlock
-        failureBlock:(MHAsiFailureBlock)failureBlock;
+        successBlock:(TLAsiSuccessBlock)successBlock
+        failureBlock:(TLAsiFailureBlock)failureBlock;
 /**
  *   监听网络状态的变化
  */

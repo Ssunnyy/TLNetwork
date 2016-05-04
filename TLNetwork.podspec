@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/TedLiuHome/TLNetwork.git", :tag => s.version.to_s ,:commit => "5971be27040624ae3ad4caa90297bd0fa7cbe2dd"}
+  s.source       = { :git => "https://github.com/TedLiuHome/TLNetwork.git", :tag => s.version.to_s ,:commit => "9cfd01ec15f5019ef19cbb623b71207693a28618"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
