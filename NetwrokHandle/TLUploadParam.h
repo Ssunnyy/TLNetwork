@@ -27,6 +27,4 @@
  */
 @property (nonatomic, copy) NSString *mimeType;
 
-
-
 @end

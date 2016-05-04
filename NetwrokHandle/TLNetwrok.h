@@ -9,10 +9,6 @@
 #ifndef TLNetwrok_h
 #define TLNetwrok_h
 
-#define SHOW_ALERT(_msg_)  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:_msg_ delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];\
-[alert show];
-
-
 #import "TLAsiNetworkDefine.h"
 #import "TLAsiNetworkDelegate.h"
 #import "TLAsiNetworkHandler.h"

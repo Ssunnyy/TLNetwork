@@ -9,6 +9,10 @@
 #ifndef TLAsiNetworkDefine_h
 #define TLAsiNetworkDefine_h
 
+#define SHOW_ALERT(_msg_)  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:_msg_ delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];\
+[alert show];
+
+
 /**
  *  请求类型
  */

@@ -27,10 +27,10 @@
 {
     return [[super alloc] init];
 }
-#pragma mark - GET 请求的三种回调方法
+#pragma mark - GET 请求的回调方法
 
 /**
- *   GET请求的公共方法 一下三种方法都调用这个方法 根据传入的不同参数觉得回调的方式
+ *   GET请求的公共方法 以下方法都调用这个方法 根据传入的不同参数觉得回调的方式
  *
  *   @param url           ur
  *   @param paramsDict   paramsDict
@@ -86,25 +86,7 @@
     [self getRequstWithURL:url params:params target:nil action:nil delegate:delegate successBlock:nil failureBlock:nil showHUD:showHUD];
 }
 
-/**
- *   get 请求通过 taget 回调方法
- *
- *   @param url         url
- *   @param paramsDict  请求参数的字典
- *   @param target      target
- *   @param action      action
- *   @param showHUD     是否加载进度指示器
- */
-+ (void)getRequstWithURL:(NSString*)url
-                  params:(NSDictionary*)params
-                  target:(id)target
-                  action:(SEL)action
-                 showHUD:(BOOL)showHUD
-{
-    [self getRequstWithURL:url params:params target:target action:action delegate:nil successBlock:nil failureBlock:nil showHUD:showHUD];
-}
-
-#pragma mark - POST请求的三种回调方法
+#pragma mark - POST请求的回调方法
 /**
  *   发送一个 POST请求的公共方法 传入不同的回调参数决定回调的方式
  *
@@ -162,67 +144,59 @@
     [self postReqeustWithURL:url params:params target:nil action:nil delegate:delegate successBlock:nil failureBlock:nil showHUD:showHUD];
 }
 /**
- *   post 请求通过 target 回调结果
- *
- *   @param url         url
- *   @param paramsDict  请求参数的字典
- *   @param target      target
- *   @param showHUD     是否显示圈圈
- */
-+ (void)postReqeustWithURL:(NSString*)url
-                    params:(NSDictionary*)params
-                    target:(id)target
-                    action:(SEL)action
-                   showHUD:(BOOL)showHUD
-{
-    [self postReqeustWithURL:url params:params target:target action:action delegate:nil successBlock:nil failureBlock:nil showHUD:showHUD];
-}
-
-/**
- *  上传文件
+ *  上传多个文件
  *
  *  @param url          上传文件的 url 地址
  *  @param paramsDict   参数字典
  *  @param successBlock 成功
  *  @param failureBlock 失败
  *  @param showHUD      显示 HUD
+ *  @param uploadParams 上传文件的数组（数组中类型为TLUploadParam对象）
  */
+
 + (void)uploadFileWithURL:(NSString*)url
                    params:(NSDictionary*)paramsDict
              successBlock:(TLAsiSuccessBlock)successBlock
              failureBlock:(TLAsiFailureBlock)failureBlock
-              uploadParam:(TLUploadParam *)uploadParam
+              uploadParam:(NSMutableArray *)uploadParams
                   showHUD:(BOOL)showHUD
 {
-    if (showHUD) {
-        [SVProgressHUD show];
-    }
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     [manager POST:url parameters:paramsDict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
-        [formData appendPartWithFileData:uploadParam.data name:uploadParam.name fileName:uploadParam.fileName mimeType:uploadParam.mimeType];
-        
+        for (int i = 0; i < uploadParams.count; i++) {
+            if ([uploadParams[i] isKindOfClass:[TLUploadParam class]]) {
+                TLUploadParam *uploadParam = (TLUploadParam *)uploadParams[i];
+                [formData appendPartWithFileData:uploadParam.data name:uploadParam.name fileName:uploadParam.fileName mimeType:uploadParam.mimeType];
+            }else{
+                NSLog(@"文件数组不是TLUploadParam对象，请检查文件数组类型");
+                return;
+            }
+        }
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
+        [SVProgressHUD showProgress:uploadProgress.fractionCompleted status:@"上传中"];
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [SVProgressHUD dismiss];
-        NSLog(@"----> %@",responseObject);
+        // 根据服务器返回状态判定请求是否成功
+        if ([responseObject[@"state"] boolValue] == NO) {
+            if (failureBlock) {
+                failureBlock(nil);
+            }
+            NSLog(@"----> 服务器返回状态为失败");
+            return;
+        }
         if (successBlock) {
-            
+            NSLog(@"----> 接口请求成功");
             successBlock(responseObject);
         }
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         [SVProgressHUD dismiss];
         NSLog(@"----> %@",error.domain);
-        if (error) {
-            failureBlock(error);
-        }
     }];
 }
-
 @end

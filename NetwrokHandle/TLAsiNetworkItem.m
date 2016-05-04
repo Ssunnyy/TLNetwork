@@ -65,9 +65,9 @@
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 [SVProgressHUD dismiss];
-                
-//                NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:responseObject];
+
                 if ([responseObject[@"state"] boolValue] == NO) {
+                    
                     if (failureBlock) {
                         failureBlock(nil);
                     }

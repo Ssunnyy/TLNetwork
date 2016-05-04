@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "TLAsiNetworkDefine.h"
 #import "TLAsiNetworkDelegate.h"
+
 @class TLUploadParam;
-/// 请求管理着
+/// 请求管理者
 @interface TLNetworkManager : NSObject
 
 /// 返回单例
@@ -73,19 +74,21 @@
                   delegate:(id<TLAsiNetworkDelegate>)delegate
                    showHUD:(BOOL)showHUD;
 /**
- *  上传文件
+ *  上传单个文件
  *
  *  @param url          上传文件的 url 地址
  *  @param paramsDict   参数字典
  *  @param successBlock 成功
  *  @param failureBlock 失败
  *  @param showHUD      显示 HUD
+ *  @param uploadParams 上传文件的数组（数组中类型为TLUploadParam对象）
  */
+
 + (void)uploadFileWithURL:(NSString*)url
                    params:(NSDictionary*)paramsDict
              successBlock:(TLAsiSuccessBlock)successBlock
              failureBlock:(TLAsiFailureBlock)failureBlock
-              uploadParam:(TLUploadParam *)uploadParam
+              uploadParam:(NSMutableArray *)uploadParams
                   showHUD:(BOOL)showHUD;
 
 @end
