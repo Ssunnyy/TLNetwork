@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9FEEB8F01CDB182400BE68DA /* CoreStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8E71CDB182400BE68DA /* CoreStatus.m */; };
+		9FEEB8F11CDB182400BE68DA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8ED1CDB182400BE68DA /* Reachability.m */; };
+		9FEEB8FD1CDB20C100BE68DA /* BaseRefreshVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8F41CDB20C100BE68DA /* BaseRefreshVC.m */; };
+		9FEEB8FE1CDB20C100BE68DA /* LDRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8F61CDB20C100BE68DA /* LDRefreshFooterView.m */; };
+		9FEEB8FF1CDB20C100BE68DA /* LDRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8F81CDB20C100BE68DA /* LDRefreshHeaderView.m */; };
+		9FEEB9001CDB20C100BE68DA /* tableview_pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEB8F91CDB20C100BE68DA /* tableview_pull_refresh@2x.png */; };
+		9FEEB9011CDB20C100BE68DA /* tableview_pull_refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEB8FA1CDB20C100BE68DA /* tableview_pull_refresh@3x.png */; };
+		9FEEB9021CDB20C100BE68DA /* UIScrollView+LDRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8FC1CDB20C100BE68DA /* UIScrollView+LDRefresh.m */; };
 		9FF2BB051CD9BE19008FDEB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB041CD9BE19008FDEB6 /* main.m */; };
 		9FF2BB081CD9BE19008FDEB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB071CD9BE19008FDEB6 /* AppDelegate.m */; };
 		9FF2BB0B1CD9BE19008FDEB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB0A1CD9BE19008FDEB6 /* ViewController.m */; };
@@ -52,6 +60,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9FEEB8E61CDB182400BE68DA /* CoreStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreStatus.h; sourceTree = "<group>"; };
+		9FEEB8E71CDB182400BE68DA /* CoreStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreStatus.m; sourceTree = "<group>"; };
+		9FEEB8E91CDB182400BE68DA /* CoreNetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreNetworkStatus.h; sourceTree = "<group>"; };
+		9FEEB8EA1CDB182400BE68DA /* CoreStatusProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreStatusProtocol.h; sourceTree = "<group>"; };
+		9FEEB8EC1CDB182400BE68DA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9FEEB8ED1CDB182400BE68DA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9FEEB8EF1CDB182400BE68DA /* CoreStatusSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreStatusSingleton.h; sourceTree = "<group>"; };
+		9FEEB8F31CDB20C100BE68DA /* BaseRefreshVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRefreshVC.h; sourceTree = "<group>"; };
+		9FEEB8F41CDB20C100BE68DA /* BaseRefreshVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRefreshVC.m; sourceTree = "<group>"; };
+		9FEEB8F51CDB20C100BE68DA /* LDRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDRefreshFooterView.h; sourceTree = "<group>"; };
+		9FEEB8F61CDB20C100BE68DA /* LDRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDRefreshFooterView.m; sourceTree = "<group>"; };
+		9FEEB8F71CDB20C100BE68DA /* LDRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDRefreshHeaderView.h; sourceTree = "<group>"; };
+		9FEEB8F81CDB20C100BE68DA /* LDRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDRefreshHeaderView.m; sourceTree = "<group>"; };
+		9FEEB8F91CDB20C100BE68DA /* tableview_pull_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tableview_pull_refresh@2x.png"; sourceTree = "<group>"; };
+		9FEEB8FA1CDB20C100BE68DA /* tableview_pull_refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tableview_pull_refresh@3x.png"; sourceTree = "<group>"; };
+		9FEEB8FB1CDB20C100BE68DA /* UIScrollView+LDRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LDRefresh.h"; sourceTree = "<group>"; };
+		9FEEB8FC1CDB20C100BE68DA /* UIScrollView+LDRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LDRefresh.m"; sourceTree = "<group>"; };
 		9FF2BB001CD9BE19008FDEB6 /* NetwrokDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetwrokDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF2BB041CD9BE19008FDEB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9FF2BB061CD9BE19008FDEB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,6 +159,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9FEEB8E51CDB182400BE68DA /* CoreStatus */ = {
+			isa = PBXGroup;
+			children = (
+				9FEEB8E61CDB182400BE68DA /* CoreStatus.h */,
+				9FEEB8E71CDB182400BE68DA /* CoreStatus.m */,
+				9FEEB8E81CDB182400BE68DA /* Lib */,
+			);
+			path = CoreStatus;
+			sourceTree = "<group>";
+		};
+		9FEEB8E81CDB182400BE68DA /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9FEEB8E91CDB182400BE68DA /* CoreNetworkStatus.h */,
+				9FEEB8EA1CDB182400BE68DA /* CoreStatusProtocol.h */,
+				9FEEB8EB1CDB182400BE68DA /* Reachability */,
+				9FEEB8EE1CDB182400BE68DA /* Singleton */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		9FEEB8EB1CDB182400BE68DA /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				9FEEB8EC1CDB182400BE68DA /* Reachability.h */,
+				9FEEB8ED1CDB182400BE68DA /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		9FEEB8EE1CDB182400BE68DA /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				9FEEB8EF1CDB182400BE68DA /* CoreStatusSingleton.h */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		9FEEB8F21CDB20C100BE68DA /* RefreshList */ = {
+			isa = PBXGroup;
+			children = (
+				9FEEB8F31CDB20C100BE68DA /* BaseRefreshVC.h */,
+				9FEEB8F41CDB20C100BE68DA /* BaseRefreshVC.m */,
+				9FEEB8F51CDB20C100BE68DA /* LDRefreshFooterView.h */,
+				9FEEB8F61CDB20C100BE68DA /* LDRefreshFooterView.m */,
+				9FEEB8F71CDB20C100BE68DA /* LDRefreshHeaderView.h */,
+				9FEEB8F81CDB20C100BE68DA /* LDRefreshHeaderView.m */,
+				9FEEB8F91CDB20C100BE68DA /* tableview_pull_refresh@2x.png */,
+				9FEEB8FA1CDB20C100BE68DA /* tableview_pull_refresh@3x.png */,
+				9FEEB8FB1CDB20C100BE68DA /* UIScrollView+LDRefresh.h */,
+				9FEEB8FC1CDB20C100BE68DA /* UIScrollView+LDRefresh.m */,
+			);
+			path = RefreshList;
+			sourceTree = "<group>";
+		};
 		9FF2BAF71CD9BE19008FDEB6 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +295,8 @@
 		9FF2BB3B1CD9BE25008FDEB6 /* NetwrokHandle */ = {
 			isa = PBXGroup;
 			children = (
+				9FEEB8F21CDB20C100BE68DA /* RefreshList */,
+				9FEEB8E51CDB182400BE68DA /* CoreStatus */,
 				9FF2BB761CD9BFB2008FDEB6 /* TLAsiNetworkDefine.h */,
 				9FF2BB7A1CD9C67B008FDEB6 /* TLAsiNetworkDelegate.h */,
 				9FF2BB3F1CD9BE25008FDEB6 /* TLAsiNetworkHandler.h */,
@@ -373,10 +455,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEEB9011CDB20C100BE68DA /* tableview_pull_refresh@3x.png in Resources */,
 				9FF2BB131CD9BE19008FDEB6 /* LaunchScreen.storyboard in Resources */,
 				9FF2BB101CD9BE19008FDEB6 /* Assets.xcassets in Resources */,
 				9FF2BB0E1CD9BE19008FDEB6 /* Main.storyboard in Resources */,
 				9FF2BB701CD9BED7008FDEB6 /* SVProgressHUD.bundle in Resources */,
+				9FEEB9001CDB20C100BE68DA /* tableview_pull_refresh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +485,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEEB9021CDB20C100BE68DA /* UIScrollView+LDRefresh.m in Sources */,
 				9FF2BB621CD9BE85008FDEB6 /* AFURLSessionManager.m in Sources */,
 				9FF2BB0B1CD9BE19008FDEB6 /* ViewController.m in Sources */,
+				9FEEB8F11CDB182400BE68DA /* Reachability.m in Sources */,
+				9FEEB8FF1CDB20C100BE68DA /* LDRefreshHeaderView.m in Sources */,
 				9FF2BB081CD9BE19008FDEB6 /* AppDelegate.m in Sources */,
 				9FF2BB4A1CD9BE25008FDEB6 /* DSToastAnimation.m in Sources */,
 				9FF2BB491CD9BE25008FDEB6 /* DSToast.m in Sources */,
@@ -411,12 +498,15 @@
 				9FF2BB4C1CD9BE25008FDEB6 /* TLAsiNetworkItem.m in Sources */,
 				9FF2BB601CD9BE85008FDEB6 /* AFURLRequestSerialization.m in Sources */,
 				9FF2BB4B1CD9BE25008FDEB6 /* TLAsiNetworkHandler.m in Sources */,
+				9FEEB8FD1CDB20C100BE68DA /* BaseRefreshVC.m in Sources */,
 				9FF2BB6F1CD9BED7008FDEB6 /* SVProgressAnimatedView.m in Sources */,
 				9FF2BB721CD9BED7008FDEB6 /* SVRadialGradientLayer.m in Sources */,
+				9FEEB8FE1CDB20C100BE68DA /* LDRefreshFooterView.m in Sources */,
 				9FF2BB051CD9BE19008FDEB6 /* main.m in Sources */,
 				9FF2BB5D1CD9BE85008FDEB6 /* AFHTTPSessionManager.m in Sources */,
 				9FF2BB6E1CD9BED7008FDEB6 /* SVIndefiniteAnimatedView.m in Sources */,
 				9FF2BB4E1CD9BE25008FDEB6 /* TLUploadParam.m in Sources */,
+				9FEEB8F01CDB182400BE68DA /* CoreStatus.m in Sources */,
 				9FF2BB5E1CD9BE85008FDEB6 /* AFNetworkReachabilityManager.m in Sources */,
 				9FF2BB611CD9BE85008FDEB6 /* AFURLResponseSerialization.m in Sources */,
 				9FF2BB4D1CD9BE25008FDEB6 /* TLNetworkManager.m in Sources */,
@@ -645,6 +735,7 @@
 				9FF2BB2F1CD9BE19008FDEB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FF2BB301CD9BE19008FDEB6 /* Build configuration list for PBXNativeTarget "NetwrokDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -653,6 +744,7 @@
 				9FF2BB321CD9BE19008FDEB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FF2BB331CD9BE19008FDEB6 /* Build configuration list for PBXNativeTarget "NetwrokDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -661,6 +753,7 @@
 				9FF2BB351CD9BE19008FDEB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

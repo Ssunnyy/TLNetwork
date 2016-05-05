@@ -9,8 +9,9 @@
 #import "TLAsiNetworkHandler.h"
 #import "TLAsiNetworkItem.h"
 #import "AFNetworking.h"
+#import "CoreStatus.h"
 
-@interface TLAsiNetworkHandler ()<TLAsiNetworkDelegate>
+@interface TLAsiNetworkHandler ()<TLAsiNetworkDelegate,CoreStatusProtocol>
 
 @end;
 
@@ -49,15 +50,15 @@
  *
  *  @return 根据网络请求的委托delegate而生成的唯一标示
  */
-- (TLAsiNetworkItem*)conURL:(NSString *)url
-                networkType:(TLAsiNetWorkType)networkType
-                     params:(NSMutableDictionary *)params
-                   delegate:(id)delegate
-                    showHUD:(BOOL)showHUD
-               successBlock:(TLAsiSuccessBlock)successBlock
-               failureBlock:(TLAsiFailureBlock)failureBlock
+- (TLAsiNetworkItem*)requestURL:(NSString *)url
+                    networkType:(TLAsiNetWorkType)networkType
+                         params:(NSMutableDictionary *)params
+                       delegate:(id)delegate
+                        showHUD:(BOOL)showHUD
+                   successBlock:(TLAsiSuccessBlock)successBlock
+                   failureBlock:(TLAsiFailureBlock)failureBlock
 {
-    if (self.networkError == YES) {
+    if (![CoreStatus isNetworkEnable]) {
         NSLog(@"网络连接断开,请检查网络!");
         if (failureBlock) {
             failureBlock(nil);
@@ -77,37 +78,6 @@
     self.netWorkItem.delegate = delegate;
     [self.items addObject:self.netWorkItem];
     return self.netWorkItem;
-}
-
-#pragma makr - 开始监听网络连接
-
-+ (void)startMonitoring
-{
-    // 1.获得网络监控的管理者
-    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
-    // 2.设置网络状态改变后的处理
-    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        // 当网络状态改变了, 就会调用这个block
-        switch (status)
-        {
-            case AFNetworkReachabilityStatusUnknown: // 未知网络
-                NSLog(@"未知网络");
-                [TLAsiNetworkHandler sharedInstance].networkError = NO;
-                break;
-            case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
-                [TLAsiNetworkHandler sharedInstance].networkError = YES;
-                break;
-            case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
-                NSLog(@"手机自带网络");
-                [TLAsiNetworkHandler sharedInstance].networkError = NO;
-                break;
-            case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
-                NSLog(@"WIFI");
-                [TLAsiNetworkHandler sharedInstance].networkError = NO;
-                break;
-        }
-    }];
-    [mgr startMonitoring];
 }
 /**
  *   懒加载网络请求项的 items 数组

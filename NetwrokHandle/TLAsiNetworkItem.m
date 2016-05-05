@@ -55,7 +55,6 @@
         }
         __weak typeof(self)weakSelf = self;
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        //        manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObject:@"text/html"];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", nil];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         if (networkType==TLAsiNetWorkGET)
@@ -149,5 +148,4 @@
     
     
 }
-
 @end

@@ -31,14 +31,12 @@ typedef NS_ENUM(NSUInteger, TLAsiNetWorkType){
  *  请求开始的回调（下载时用到）
  */
 typedef void (^TLAsiStartBlock)(void);
-
 /**
  *  请求成功回调
  *
  *  @param returnData 回调block
  */
 typedef void (^TLAsiSuccessBlock)(NSDictionary *returnData);
-
 /**
  *  请求失败回调
  *

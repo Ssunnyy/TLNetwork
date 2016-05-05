@@ -51,17 +51,13 @@
  *
  *  @return 根据网络请求的委托delegate而生成的唯一标示
  */
-- (TLAsiNetworkItem*)conURL:(NSString *)url
-         networkType:(TLAsiNetWorkType)networkType
-              params:(NSMutableDictionary *)params
-            delegate:(id)delegate
-             showHUD:(BOOL)showHUD
-        successBlock:(TLAsiSuccessBlock)successBlock
-        failureBlock:(TLAsiFailureBlock)failureBlock;
-/**
- *   监听网络状态的变化
- */
-+ (void)startMonitoring;
+- (TLAsiNetworkItem*)requestURL:(NSString *)url
+                    networkType:(TLAsiNetWorkType)networkType
+                         params:(NSMutableDictionary *)params
+                       delegate:(id)delegate
+                        showHUD:(BOOL)showHUD
+                   successBlock:(TLAsiSuccessBlock)successBlock
+                   failureBlock:(TLAsiFailureBlock)failureBlock;
 /**
  *   取消所有正在执行的网络请求项
  */

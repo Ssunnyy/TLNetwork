@@ -51,7 +51,7 @@
                  showHUD:(BOOL)showHUD
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithDictionary:params];
-    [[TLAsiNetworkHandler sharedInstance] conURL:url networkType:TLAsiNetWorkGET params:mutableDict delegate:delegate showHUD:showHUD successBlock:successBlock failureBlock:failureBlock];
+    [[TLAsiNetworkHandler sharedInstance] requestURL:url networkType:TLAsiNetWorkGET params:mutableDict delegate:delegate showHUD:showHUD successBlock:successBlock failureBlock:failureBlock];
 }
 /**
  *   GET请求通过Block 回调结果
@@ -109,7 +109,7 @@
                    showHUD:(BOOL)showHUD
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithDictionary:params];
-    [[TLAsiNetworkHandler sharedInstance] conURL:url networkType:TLAsiNetWorkPOST params:mutableDict delegate:delegate showHUD:showHUD successBlock:successBlock failureBlock:failureBlock];
+    [[TLAsiNetworkHandler sharedInstance] requestURL:url networkType:TLAsiNetWorkPOST params:mutableDict delegate:delegate showHUD:showHUD successBlock:successBlock failureBlock:failureBlock];
 }
 /**
  *   通过 Block回调结果
