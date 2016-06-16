@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6F5FED1D1247CF00FD83D6 /* CRToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F5FEC1D1247CF00FD83D6 /* CRToast.m */; };
 		9FEEB8F01CDB182400BE68DA /* CoreStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8E71CDB182400BE68DA /* CoreStatus.m */; };
 		9FEEB8F11CDB182400BE68DA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8ED1CDB182400BE68DA /* Reachability.m */; };
 		9FEEB8FD1CDB20C100BE68DA /* BaseRefreshVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEB8F41CDB20C100BE68DA /* BaseRefreshVC.m */; };
@@ -23,8 +24,6 @@
 		9FF2BB131CD9BE19008FDEB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2BB111CD9BE19008FDEB6 /* LaunchScreen.storyboard */; };
 		9FF2BB1E1CD9BE19008FDEB6 /* NetwrokDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB1D1CD9BE19008FDEB6 /* NetwrokDemoTests.m */; };
 		9FF2BB291CD9BE19008FDEB6 /* NetwrokDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB281CD9BE19008FDEB6 /* NetwrokDemoUITests.m */; };
-		9FF2BB491CD9BE25008FDEB6 /* DSToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB381CD9BE25008FDEB6 /* DSToast.m */; };
-		9FF2BB4A1CD9BE25008FDEB6 /* DSToastAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB3A1CD9BE25008FDEB6 /* DSToastAnimation.m */; };
 		9FF2BB4B1CD9BE25008FDEB6 /* TLAsiNetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB401CD9BE25008FDEB6 /* TLAsiNetworkHandler.m */; };
 		9FF2BB4C1CD9BE25008FDEB6 /* TLAsiNetworkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB421CD9BE25008FDEB6 /* TLAsiNetworkItem.m */; };
 		9FF2BB4D1CD9BE25008FDEB6 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2BB451CD9BE25008FDEB6 /* TLNetworkManager.m */; };
@@ -60,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F6F5FEB1D1247CF00FD83D6 /* CRToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRToast.h; sourceTree = "<group>"; };
+		9F6F5FEC1D1247CF00FD83D6 /* CRToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRToast.m; sourceTree = "<group>"; };
 		9FEEB8E61CDB182400BE68DA /* CoreStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreStatus.h; sourceTree = "<group>"; };
 		9FEEB8E71CDB182400BE68DA /* CoreStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreStatus.m; sourceTree = "<group>"; };
 		9FEEB8E91CDB182400BE68DA /* CoreNetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreNetworkStatus.h; sourceTree = "<group>"; };
@@ -93,10 +94,6 @@
 		9FF2BB241CD9BE19008FDEB6 /* NetwrokDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetwrokDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF2BB281CD9BE19008FDEB6 /* NetwrokDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetwrokDemoUITests.m; sourceTree = "<group>"; };
 		9FF2BB2A1CD9BE19008FDEB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FF2BB371CD9BE25008FDEB6 /* DSToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSToast.h; sourceTree = "<group>"; };
-		9FF2BB381CD9BE25008FDEB6 /* DSToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSToast.m; sourceTree = "<group>"; };
-		9FF2BB391CD9BE25008FDEB6 /* DSToastAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSToastAnimation.h; sourceTree = "<group>"; };
-		9FF2BB3A1CD9BE25008FDEB6 /* DSToastAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSToastAnimation.m; sourceTree = "<group>"; };
 		9FF2BB3F1CD9BE25008FDEB6 /* TLAsiNetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAsiNetworkHandler.h; sourceTree = "<group>"; };
 		9FF2BB401CD9BE25008FDEB6 /* TLAsiNetworkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAsiNetworkHandler.m; sourceTree = "<group>"; };
 		9FF2BB411CD9BE25008FDEB6 /* TLAsiNetworkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAsiNetworkItem.h; sourceTree = "<group>"; };
@@ -159,6 +156,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F6F5FEA1D1247CF00FD83D6 /* CRToast */ = {
+			isa = PBXGroup;
+			children = (
+				9F6F5FEB1D1247CF00FD83D6 /* CRToast.h */,
+				9F6F5FEC1D1247CF00FD83D6 /* CRToast.m */,
+			);
+			name = CRToast;
+			path = ../../CRToast;
+			sourceTree = "<group>";
+		};
 		9FEEB8E51CDB182400BE68DA /* CoreStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +244,7 @@
 		9FF2BB021CD9BE19008FDEB6 /* NetwrokDemo */ = {
 			isa = PBXGroup;
 			children = (
-				9FF2BB361CD9BE25008FDEB6 /* DSTost */,
+				9F6F5FEA1D1247CF00FD83D6 /* CRToast */,
 				9FF2BB3B1CD9BE25008FDEB6 /* NetwrokHandle */,
 				9FF2BB631CD9BED7008FDEB6 /* SVProgressHUD */,
 				9FF2BB4F1CD9BE85008FDEB6 /* AFNetworking */,
@@ -278,18 +285,6 @@
 				9FF2BB2A1CD9BE19008FDEB6 /* Info.plist */,
 			);
 			path = NetwrokDemoUITests;
-			sourceTree = "<group>";
-		};
-		9FF2BB361CD9BE25008FDEB6 /* DSTost */ = {
-			isa = PBXGroup;
-			children = (
-				9FF2BB371CD9BE25008FDEB6 /* DSToast.h */,
-				9FF2BB381CD9BE25008FDEB6 /* DSToast.m */,
-				9FF2BB391CD9BE25008FDEB6 /* DSToastAnimation.h */,
-				9FF2BB3A1CD9BE25008FDEB6 /* DSToastAnimation.m */,
-			);
-			name = DSTost;
-			path = ../../DSTost;
 			sourceTree = "<group>";
 		};
 		9FF2BB3B1CD9BE25008FDEB6 /* NetwrokHandle */ = {
@@ -419,6 +414,8 @@
 				TargetAttributes = {
 					9FF2BAFF1CD9BE19008FDEB6 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = CJ5RHVG9LE;
+						DevelopmentTeamName = "Peng Liu";
 					};
 					9FF2BB181CD9BE19008FDEB6 = {
 						CreatedOnToolsVersion = 7.3;
@@ -491,8 +488,6 @@
 				9FEEB8F11CDB182400BE68DA /* Reachability.m in Sources */,
 				9FEEB8FF1CDB20C100BE68DA /* LDRefreshHeaderView.m in Sources */,
 				9FF2BB081CD9BE19008FDEB6 /* AppDelegate.m in Sources */,
-				9FF2BB4A1CD9BE25008FDEB6 /* DSToastAnimation.m in Sources */,
-				9FF2BB491CD9BE25008FDEB6 /* DSToast.m in Sources */,
 				9FF2BB711CD9BED7008FDEB6 /* SVProgressHUD.m in Sources */,
 				9FF2BB5F1CD9BE85008FDEB6 /* AFSecurityPolicy.m in Sources */,
 				9FF2BB4C1CD9BE25008FDEB6 /* TLAsiNetworkItem.m in Sources */,
@@ -507,6 +502,7 @@
 				9FF2BB6E1CD9BED7008FDEB6 /* SVIndefiniteAnimatedView.m in Sources */,
 				9FF2BB4E1CD9BE25008FDEB6 /* TLUploadParam.m in Sources */,
 				9FEEB8F01CDB182400BE68DA /* CoreStatus.m in Sources */,
+				9F6F5FED1D1247CF00FD83D6 /* CRToast.m in Sources */,
 				9FF2BB5E1CD9BE85008FDEB6 /* AFNetworkReachabilityManager.m in Sources */,
 				9FF2BB611CD9BE85008FDEB6 /* AFURLResponseSerialization.m in Sources */,
 				9FF2BB4D1CD9BE25008FDEB6 /* TLNetworkManager.m in Sources */,

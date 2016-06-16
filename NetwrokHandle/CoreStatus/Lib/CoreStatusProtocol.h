@@ -8,7 +8,6 @@
 
 #ifndef CoreStatus_CoreStatusProtocol_h
 #define CoreStatus_CoreStatusProtocol_h
-
 #import "CoreNetworkStatus.h"
 
 @protocol CoreStatusProtocol <NSObject>
@@ -21,5 +20,10 @@
 -(void)coreNetworkChangeNoti:(NSNotification *)noti;
 
 @end
+
+
+
+
+
 
 #endif

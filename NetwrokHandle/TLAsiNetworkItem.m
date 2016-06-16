@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
 #import "TLAsiNetworkDefine.h"
-#import "DSToast.h"
+#import "CRToast.h"
 
 @interface TLAsiNetworkItem ()
 
@@ -72,7 +72,7 @@
                     }
                     [weakSelf removewItem];
                     
-                    [[DSToast toastWithText:responseObject[@"message"]] show];
+//                    [[DSToast toastWithText:responseObject[@"message"]] show];
                     
                     return;
                 }

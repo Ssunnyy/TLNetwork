@@ -253,6 +253,7 @@ HMSingletonM(CoreStatus)
     
     return _technology4GArray;
 }
+
 /** 网络状态中文数组 */
 -(NSArray *)coreNetworkStatusStringArray{
     
@@ -263,11 +264,20 @@ HMSingletonM(CoreStatus)
     
     return _coreNetworkStatusStringArray;
 }
+
+
+
+
+
+
+
 /** 是否是Wifi */
 +(BOOL)isWifiEnable{
     
     return [self currentNetWorkStatus] == CoreNetWorkStatusWifi;
 }
+
+
 /** 是否有网络 */
 +(BOOL)isNetworkEnable{
     
