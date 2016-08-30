@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
 #import "TLAsiNetworkDefine.h"
-#import "CRToast.h"
+#import "DSToast.h"
 
 @interface TLAsiNetworkItem ()
 
@@ -65,14 +65,13 @@
                 
                 [SVProgressHUD dismiss];
 
-                if ([responseObject[@"state"] boolValue] == NO) {
+                if ([responseObject[@"api_code"] integerValue] != 0) {
                     
                     if (failureBlock) {
                         failureBlock(nil);
                     }
                     [weakSelf removewItem];
-                    
-//                    [[DSToast toastWithText:responseObject[@"message"]] show];
+                    [[DSToast toastWithText:responseObject[@"api_message"]] show];
                     
                     return;
                 }

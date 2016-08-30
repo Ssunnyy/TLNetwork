@@ -11,6 +11,7 @@
 #import "TLUploadParam.h"
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
+#import "DSToast.h"
 @implementation TLNetworkManager
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
@@ -182,11 +183,13 @@
         
         [SVProgressHUD dismiss];
         // 根据服务器返回状态判定请求是否成功
-        if ([responseObject[@"state"] boolValue] == NO) {
+        if ([responseObject[@"api_code"] integerValue] != 0) {
+            
             if (failureBlock) {
                 failureBlock(nil);
             }
-            NSLog(@"----> 服务器返回状态为失败");
+            [[DSToast toastWithText:responseObject[@"api_message"]] show];
+            
             return;
         }
         if (successBlock) {
