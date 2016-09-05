@@ -64,30 +64,30 @@
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 [SVProgressHUD dismiss];
-
-                if ([responseObject[@"api_code"] integerValue] != 0) {
+                
+                if ([responseObject[@"api_code"] integerValue] == 0) {
+                    
+                    if (successBlock) {
+                        successBlock(responseObject);
+                    }
+                    if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
+                        [weakSelf.delegate requestDidFinishLoading:responseObject];
+                    }
+                    [weakSelf removewItem];
+                    
+                }else{
                     
                     if (failureBlock) {
                         failureBlock(nil);
                     }
                     [weakSelf removewItem];
                     [[DSToast toastWithText:responseObject[@"api_message"]] show];
-                    
-                    return;
                 }
-                
-                if (successBlock) {
-                    successBlock(responseObject);
-                }
-                if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
-                    [weakSelf.delegate requestDidFinishLoading:responseObject];
-                }
-                [weakSelf removewItem];
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
                 [SVProgressHUD dismiss];
-                NSLog(@"---error==%@\n",error.localizedDescription);
+                
                 if (failureBlock) {
                     failureBlock(error);
                 }
@@ -106,14 +106,25 @@
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 [SVProgressHUD dismiss];
-                NSLog(@"\n\n----请求的返回结果 %@\n",responseObject);
-                if (successBlock) {
-                    successBlock(responseObject);
+                
+                if ([responseObject[@"api_code"] integerValue] == 0) {
+                    
+                    if (successBlock) {
+                        successBlock(responseObject);
+                    }
+                    if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
+                        [weakSelf.delegate requestDidFinishLoading:responseObject];
+                    }
+                    [weakSelf removewItem];
+                    
+                }else{
+                    
+                    if (failureBlock) {
+                        failureBlock(nil);
+                    }
+                    [weakSelf removewItem];
+                    [[DSToast toastWithText:responseObject[@"api_message"]] show];
                 }
-                if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
-                    [weakSelf.delegate requestDidFinishLoading:responseObject];
-                }
-                [weakSelf removewItem];
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
@@ -129,18 +140,29 @@
             }];
         }
         else if (networkType == TLAsiNetWorkPATCH){
-        
+            
             [manager PATCH:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 [SVProgressHUD dismiss];
-                NSLog(@"\n\n----请求的返回结果 %@\n",responseObject);
-                if (successBlock) {
-                    successBlock(responseObject);
+                
+                if ([responseObject[@"api_code"] integerValue] == 0) {
+                    
+                    if (successBlock) {
+                        successBlock(responseObject);
+                    }
+                    if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
+                        [weakSelf.delegate requestDidFinishLoading:responseObject];
+                    }
+                    [weakSelf removewItem];
+                    
+                }else{
+                    
+                    if (failureBlock) {
+                        failureBlock(nil);
+                    }
+                    [weakSelf removewItem];
+                    [[DSToast toastWithText:responseObject[@"api_message"]] show];
                 }
-                if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
-                    [weakSelf.delegate requestDidFinishLoading:responseObject];
-                }
-                [weakSelf removewItem];
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
@@ -170,10 +192,5 @@
             [weakSelf.delegate netWorkWillDealloc:weakSelf];
         }
     });
-}
-- (void)dealloc
-{
-    
-    
 }
 @end
