@@ -110,6 +110,7 @@
                    showHUD:(BOOL)showHUD
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithDictionary:params];
+    
     [[TLAsiNetworkHandler sharedInstance] requestURL:url networkType:TLAsiNetWorkPOST params:mutableDict delegate:delegate showHUD:showHUD successBlock:successBlock failureBlock:failureBlock];
 }
 /**
@@ -144,6 +145,65 @@
 {
     [self postReqeustWithURL:url params:params target:nil action:nil delegate:delegate successBlock:nil failureBlock:nil showHUD:showHUD];
 }
+#pragma mark - PATCH请求的回调方法
+/**
+ *   发送一个 PATCH请求的公共方法 传入不同的回调参数决定回调的方式
+ *
+ *   @param url           ur
+ *   @param paramsDict   paramsDict
+ *   @param target       target
+ *   @param action       action
+ *   @param delegate     delegate
+ *   @param successBlock successBlock
+ *   @param failureBlock failureBlock
+ *   @param showHUD      showHUD
+ */
++ (void)patchReqeustWithURL:(NSString*)url
+                     params:(NSDictionary*)params
+                     target:(id)target
+                     action:(SEL)action
+                   delegate:(id<TLAsiNetworkDelegate>)delegate
+               successBlock:(TLAsiSuccessBlock)successBlock
+               failureBlock:(TLAsiFailureBlock)failureBlock
+                    showHUD:(BOOL)showHUD
+{
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithDictionary:params];
+    
+    [[TLAsiNetworkHandler sharedInstance] requestURL:url networkType:TLAsiNetWorkPATCH params:mutableDict delegate:delegate showHUD:showHUD successBlock:successBlock failureBlock:failureBlock];
+}
+/**
+ *   通过 Block回调结果
+ *
+ *   @param url           url
+ *   @param paramsDict    请求的参数字典
+ *   @param successBlock  成功的回调
+ *   @param failureBlock  失败的回调
+ *   @param showHUD       是否加载进度指示器
+ */
++ (void)patchReqeustWithURL:(NSString*)url
+                     params:(NSDictionary*)params
+               successBlock:(TLAsiSuccessBlock)successBlock
+               failureBlock:(TLAsiFailureBlock)failureBlock
+                    showHUD:(BOOL)showHUD
+{
+    [self patchReqeustWithURL:url params:params target:nil action:nil delegate:nil successBlock:successBlock failureBlock:false showHUD:YES];
+}
+/**
+ *   post请求通过代理回调
+ *
+ *   @param url         url
+ *   @param paramsDict  请求的参数
+ *   @param delegate    delegate
+ *   @param showHUD    是否转圈圈
+ */
++ (void)patchReqeustWithURL:(NSString*)url
+                     params:(NSDictionary*)params
+                   delegate:(id<TLAsiNetworkDelegate>)delegate
+                    showHUD:(BOOL)showHUD;
+{
+    [self patchReqeustWithURL:url params:params target:nil action:nil delegate:delegate successBlock:nil failureBlock:nil showHUD:showHUD];
+}
+
 /**
  *  上传多个文件
  *

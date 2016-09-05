@@ -12,11 +12,9 @@
 #import "CoreStatusSingleton.h"
 #import "CoreStatusProtocol.h"
 
-
-
 @interface CoreStatus : NSObject
-HMSingletonH(CoreStatus)
 
+HMSingletonH(CoreStatus)
 
 /** 获取当前网络状态：枚举 */
 +(CoreNetWorkStatus)currentNetWorkStatus;

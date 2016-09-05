@@ -39,11 +39,9 @@ static NSString *const CoreStatusChangedNoti = @"CoreStatusChangedNoti";
 @end
 
 
-
-
 @implementation CoreStatus
-HMSingletonM(CoreStatus)
 
+HMSingletonM(CoreStatus)
 
 
 +(void)initialize{

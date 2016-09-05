@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TLNetwrok.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)actionTouchTest:(id)sender {
+    
+    [[TLAsiNetworkHandler sharedInstance] requestURL:@"http://192.168.1.124:8080/BuildCloud/api/user/profile/1/password?" networkType:TLAsiNetWorkPATCH params:@{@"password":@"123454",@"code":@"23"} delegate:nil showHUD:YES successBlock:^(NSDictionary *returnData) {
+        
+    } failureBlock:^(NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

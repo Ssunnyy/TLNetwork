@@ -17,8 +17,9 @@
  *  请求类型
  */
 typedef NS_ENUM(NSUInteger, TLAsiNetWorkType){
-    TLAsiNetWorkGET = 1, // GET请求
-    TLAsiNetWorkPOST     // POST请求
+    TLAsiNetWorkGET = 1,  // GET请求
+    TLAsiNetWorkPOST,     // POST请求
+    TLAsiNetWorkPATCH     // PATCH请求
 };
 /**
  *  网络请求超时的时间

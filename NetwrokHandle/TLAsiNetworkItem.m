@@ -55,7 +55,7 @@
         }
         __weak typeof(self)weakSelf = self;
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", nil];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/html", nil];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         if (networkType==TLAsiNetWorkGET)
         {
@@ -98,7 +98,8 @@
                 
             }];
             
-        }else{
+        }
+        else if (networkType == TLAsiNetWorkPOST){
             [manager POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
                 
                 
@@ -125,6 +126,34 @@
                     [weakSelf.delegate requestdidFailWithError:error];
                 }
                 [weakSelf removewItem];
+            }];
+        }
+        else if (networkType == TLAsiNetWorkPATCH){
+        
+            [manager PATCH:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                
+                [SVProgressHUD dismiss];
+                NSLog(@"\n\n----请求的返回结果 %@\n",responseObject);
+                if (successBlock) {
+                    successBlock(responseObject);
+                }
+                if ([weakSelf.delegate respondsToSelector:@selector(requestDidFinishLoading:)]) {
+                    [weakSelf.delegate requestDidFinishLoading:responseObject];
+                }
+                [weakSelf removewItem];
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                
+                [SVProgressHUD dismiss];
+                NSLog(@"---error==%@\n",error.localizedDescription);
+                if (failureBlock) {
+                    failureBlock(error);
+                }
+                if ([weakSelf.delegate respondsToSelector:@selector(requestdidFailWithError:)]) {
+                    [weakSelf.delegate requestdidFailWithError:error];
+                }
+                [weakSelf removewItem];
+                
             }];
         }
     }
